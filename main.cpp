@@ -34,19 +34,50 @@ void print()
 
 void insertRandom()//adds a random number at a free place
 {
-	int c,n;
-	do
+    srand (time(NULL));
+	int c, n, k=0;
+	int **emptycells;
+	emptycells=(int**)malloc(sizeof(int*[2]));
+	emptycells[0]=(int*)malloc(sizeof(int[1]));
+	emptycells[1]=(int*)malloc(sizeof(int[1]));
+	for(c=0; c<4; c++)
 	{
-	c= rand() % 4;
-	n= rand() % 4;
+        for(n=0;n<4;n++)
+        {
+            if(table[c][n]==0)
+            {
+                if(k=0)
+                {
+                    emptycells[0][k]=c;
+                    emptycells[1][k]=n;
+                    k++;
+                }
+                else
+                {
+                    emptycells[0]=(int*)realloc(*emptycells, sizeof(int[k+1]));
+                    emptycells[1]=(int*)realloc(*emptycells, sizeof(int[k+1]));
+                    emptycells[0][k]=c;
+                    emptycells[1][k]=n;
+                    k++;
+                }
+            }
+        }
 	}
-	while(table[c][n]!=0);
-	int k=rand()% 2;
-	switch(k)
+	if(k==0) exit(EXIT_FAILURE);
+	int pos = rand()%k+1;
+	srand (time(NULL));
+	int num=rand()% 2;
+	switch(num)
 	{
-		case 0 : table[c][n]=2 ;break;
-		case 1 : table[c][n]=4 ;break;
+		case 0 : table[emptycells[0][pos]][emptycells[1][pos]]=2 ;break;
+		case 1 : table[emptycells[0][pos]][emptycells[1][pos]]=4 ;break;
 	}
+
+
+    free(emptycells[1]);
+    free(emptycells[0]);
+
+	free(emptycells);
 }
 void shiftUp()
 {
