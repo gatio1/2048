@@ -311,8 +311,3 @@ int main()
 
 		return 0;
 }
-//kolega problem izchezbat chisla
-//columns and rows arent the same when shifting. column counter doesn't work.
-//when moving up and down new numbers don't appear
-//New numbers appear in the place of old ones
-//Dynamic array in insertRandom is retarded.
