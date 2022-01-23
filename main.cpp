@@ -32,7 +32,7 @@ void print()
 	cout<<" -----------------------"<<endl;
 }
 
-void insertRandom()//adds a random number at a free place, ne bacha ama hich
+void insertRandom()//adds a random number at a free place
 {
     srand (time(NULL));
 	int c, n, k=0;
