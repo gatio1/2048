@@ -42,7 +42,7 @@ void insertRandom()//adds a random number at a free place
 	//(*emptycells)[1]=(int*)malloc(sizeof(int));
 	emptycells[0]=(int*)malloc(sizeof(int));//ednakvi adresi na dwata masiva
 	emptycells[1]=(int*)malloc(sizeof(int));//ednakvi adresi na dvata masiva
-	if((long)emptycells[0]==(long)emptycells[1]) cout<<"\nRavni sa kvo da napravq\n";
+	if((long)emptycells[0]==(long)emptycells[1]) cout<<"\nRavni sa\n";
 	for(c=0; c<4; c++)
 	{
         for(n=0;n<4;n++)
